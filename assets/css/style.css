@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   font-family: Arial, Helvetica, sans-serif;
@@ -15,13 +16,23 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 /* Variables */
 :root {
   --rgba1: 255, 255, 255, 0.15;
   --rgba2: 31, 38, 15, 0.25;
+  --social-link-colour: #a5a3a3;
+  --bg-body: #fafafc;
+  --bg-white: #ffffff;
+  --text-colour: #0f2943;
+  --para-colour: #6c757d;
+  --section-title-color: #6a4a3e;
+  --shadow: 0 0 25px rgba(0, 0, 0, 0.06);
 }
+
 /* Start Navbar */
 @scope (.header) {
+
   /* Header Style */
   :scope {
     position: fixed;
@@ -30,6 +41,7 @@ html {
     right: 0;
     z-index: 1000;
     padding: 0 25px;
+
     /* Navbar Style */
     .navbar {
       max-width: 1200px;
@@ -45,6 +57,7 @@ html {
       box-shadow:
         0 8px 32px rgba(var(--rgba2)),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
       .navLinks {
         color: rgba(255, 255, 255, 0.95);
         text-decoration: none;
@@ -56,6 +69,7 @@ html {
 
         position: relative;
         overflow: hidden;
+
         &::before {
           content: "";
           position: absolute;
@@ -63,16 +77,16 @@ html {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3)
-          );
+          background: linear-gradient(90deg,
+              transparent,
+              rgba(255, 255, 255, 0.3));
           transition: left 0.5s;
         }
+
         &:hover::before {
           left: 100%;
         }
+
         &:hover {
           color: #fff;
           background-color: rgba(255, 255, 255, 0.25);
@@ -83,6 +97,7 @@ html {
     }
   }
 }
+
 /* Sections */
 @scope (.holder-sections) {
   section {
@@ -94,4 +109,54 @@ html {
     font-weight: 600;
     color: #fff;
   }
+}
+
+
+/* footer */
+footer {
+  background-color: var(--bg-white);
+  box-shadow: var(--shadow);
+}
+
+.footer {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer p {
+  color: color-mix(in srgb, var(--text-colour) 90%, transparent);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.footer p strong {
+  font-weight: 600;
+}
+
+.copy-right {
+  color: var(--para-colour);
+  font-weight: 600;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social-links a {
+  color: var(--social-link-colour);
+  border: 1px solid var(--social-link-colour);
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.designed-by span {
+  color: var(--primary-colour);
 }
